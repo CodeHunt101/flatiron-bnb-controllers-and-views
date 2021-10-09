@@ -16,6 +16,7 @@ group :development, :test do
   gem "pry-byebug"
   gem "rspec-rails"
   gem "sprockets_better_errors"
+  gem "turbolinks"
 gem 'sqlite3', '~> 1.3.6'
 end
 

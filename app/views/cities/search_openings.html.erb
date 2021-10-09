@@ -1,0 +1,26 @@
+<h1>Openings</h1>
+
+
+<%= form_tag openings_search_path, method: :get do %>
+  <label>Initial date:</label><br>
+  <%= text_field_tag :start_date  %><br>
+
+  <label>Final date:</label><br>
+  <%= text_field_tag :final_date  %><br>
+
+  <%= submit_tag "Submit" %>
+
+<%end%>
+
+
+
+<% @listings.each do |listing| %>
+  <%= link_to listing.title, listing_path(listing) %>
+  <ul>
+    <li><%= listing.listing_type%></li>
+    <li><%= listing.address%></li>
+    <li><%= link_to listing.neighborhood.name, neighborhood_path(listing.neighborhood) %></li>
+    <li>Average Rating: <%= listing.average_review_rating%></li>
+    <li>$<%= listing.price%></li>
+  </ul>
+<%end%>
